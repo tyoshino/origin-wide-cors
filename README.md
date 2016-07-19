@@ -8,6 +8,10 @@ The Origin-Wide CORS mechanism improves this by allowing an origin server to ann
 
 Starting with just summarizing ideas proposed at https://github.com/whatwg/fetch/issues/210
 
+- general resource policy setting infra (e.g. CSP) vs. CORS only
+  - https://github.com/whatwg/fetch/issues/210#issuecomment-211441909
+  - mnot's original proposal
+  - https://github.com/mikewest/cors-rfc1918/issues/7
 - the address should be under control of the origin's administrator
 - hierarchical design or single point
 - extend the existing CORS preflight or ...
@@ -16,14 +20,20 @@ Starting with just summarizing ideas proposed at https://github.com/whatwg/fetch
   - Origin-Wide-CORS: Origin= ; Headers= ;
 - patterns
 - file fetching + parsing vs. via HTTP headers
+  - well-known vs. Access-Control-Policy: here
+    - https://github.com/whatwg/fetch/issues/210#issuecomment-211441909
+    - https://github.com/whatwg/fetch/issues/210#issuecomment-212193386
 - expiration
   - Max-Age
+  - Etag like versioning?
 - scope, realm
   - https://github.com/whatwg/fetch/issues/210#issuecomment-179506649
   - each directory vs. subdirectories https://github.com/whatwg/fetch/issues/210#issuecomment-179561072
 - include credentialed or non-credentialed only
 - API side switch or internally? https://github.com/whatwg/fetch/issues/210#issuecomment-178476230
 - should allow proxies to cache the CORS information https://github.com/whatwg/fetch/issues/210#issuecomment-178269098
+- resolving inconsistent responses https://github.com/whatwg/fetch/issues/210#issuecomment-186501663
+- policy signing https://github.com/whatwg/fetch/issues/210#issuecomment-211441909
 
 ## Plan
 
