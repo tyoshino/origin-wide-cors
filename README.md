@@ -6,6 +6,8 @@ The Origin Wide CORS mechanism improves this by allowing an origin server to ann
 
 ## Design points
 
+Starting with just summarizing ideas proposed at https://github.com/whatwg/fetch/issues/210
+
 - the address should be under control of the origin's administrator
 - hierarchical design or single point
 - extend the existing CORS preflight or ...
