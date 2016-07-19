@@ -1,0 +1,1 @@
+# origin-wide-cors
