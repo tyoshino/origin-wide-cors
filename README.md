@@ -1,8 +1,8 @@
-# Origin Wide CORS
+# Origin-Wide CORS
 
 Extra round trip caused by CORS preflight has been adding significant delay to XHR/Fetch with non-simple headers/method. This is preventing performance sensitive applications from adopting web platform.
 
-The Origin Wide CORS mechanism improves this by allowing an origin server to announce CORS capability and parameters widely across resources.
+The Origin-Wide CORS mechanism improves this by allowing an origin server to announce CORS capability and parameters widely across resources.
 
 ## Design points
 
