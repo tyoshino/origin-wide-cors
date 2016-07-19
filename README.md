@@ -34,6 +34,8 @@ Starting with just summarizing ideas proposed at https://github.com/whatwg/fetch
 - should allow proxies to cache the CORS information https://github.com/whatwg/fetch/issues/210#issuecomment-178269098
 - resolving inconsistent responses https://github.com/whatwg/fetch/issues/210#issuecomment-186501663
 - policy signing https://github.com/whatwg/fetch/issues/210#issuecomment-211441909
+- JSON, CBOR, ...
+- JOSE
 
 ## Plan
 
