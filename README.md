@@ -93,6 +93,11 @@ The `Origin-Wide-CORS` header has a JSON formatted value quoted by quoted-string
 - An Origin-Wide-CORS descriptor fetched over HTTP is not applicable to fetches over HTTPS
 - An Origin-Wide-CORS descriptor fetched over HTTPS is applicable to fetches over both HTTPS and HTTP
 
+### Issues
+
+- The descriptor gets cached together with the resource R? Separately maintained?
+  - -> only in response to OPTIONS?
+
 ### General Origin-Wide Policy
 
 This protocol can be generalized to allow for announcing various policies in addition to the CORS.
