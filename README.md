@@ -47,12 +47,13 @@ Starting with just summarizing ideas proposed at https://github.com/whatwg/fetch
   - shouldn't be simply extended to HTTPS from HTTP
 - Extend it to enable announcing capability in more fine-grained form and detailed parameters
 
-## Idea 1
+## Strawman
 
 - On the initial cross-origin non-simple request to an origin X from origin Y
   - The client A issues a preflight request to resource R
     - The preflight request MAY include `Origin-Wide-CORS-Supported: yes` header to announce it understands Origin-Wide CORS protocol
-  - If a server B sees the `Origin-Wide-CORS-Supported: yes` header entry in the received CORS preflight or actual CORS request, it MAY include the `Origin-Wide-CORS` header whose value is a Origin-Wide CORS descriptor
+  - If a server B sees the `Origin-Wide-CORS-Supported` header entry in the received CORS preflight or actual CORS request, it MAY include the `Origin-Wide-CORS` header whose value is a Origin-Wide CORS descriptor
+    - The `Origin-Wide-CORS-Supported` header must have either a value `yes` or `version` parameter or `tag` parameter
     - Any entry in the Origin-Wide CORS descriptor whose `url` field is pointing at a resource which is not under R, it must be ignored.
 
 - On the initial request to a ...
@@ -77,10 +78,16 @@ The `Origin-Wide-CORS` header has a JSON formatted value quoted by quoted-string
 
 - This parameter will be stored into the CORS preflight cache with the `origin-wide-cors` flag
   - Pathes such as "/service", "/service/x", "/service/x/y", "/service/x/y?z=foo", etc. are requested, this cache will be instantiated to a CORS preflight cache entry without the `origin-wide-cors` flag (creates entries for each headername in headernames)
+    - matching is done from the first entry to the last entry
+      - https://github.com/whatwg/fetch/issues/210#issuecomment-211470853
+    - Partial update is not supported
+    - The instantiation doesn't happen if there's existing active entry
   - Pathes such as "/servicex", "/servicex/y", etc. are not affected.
 - Note: `origin` field doesn't support the wildcard "*". A concrete origin must be specified.
 - `credentials` defaults to **false** meaning that this `Origin-Wide-CORS` parameters affects only non-credentialled requests
 - The only allowed value for `credentials` is **false** for the initial version of the protocol
+- An Origin-Wide-CORS descriptor fetched over HTTP is not applicable to fetches over HTTPS
+- An Origin-Wide-CORS descriptor fetched over HTTPS is applicable to fetches over both HTTPS and HTTP
 
 ## Alternatives
 
