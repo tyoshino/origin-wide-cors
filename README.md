@@ -38,8 +38,8 @@ Starting with just summarizing ideas proposed at https://github.com/whatwg/fetch
 - should allow proxies to cache the CORS information https://github.com/whatwg/fetch/issues/210#issuecomment-178269098
 - resolving inconsistent responses https://github.com/whatwg/fetch/issues/210#issuecomment-186501663
 - policy signing https://github.com/whatwg/fetch/issues/210#issuecomment-211441909
+  - JOSE
 - JSON, CBOR, ...
-- JOSE
 
 ## Plan
 
@@ -76,7 +76,7 @@ The `Origin-Wide-CORS` header has a JSON formatted value quoted by quoted-string
     ...
   ],
   "csp": ...
-  "upgrade-insecure-requests"
+  "upgrade-insecure-requests": ...
 }
 ```
 
@@ -97,6 +97,9 @@ The `Origin-Wide-CORS` header has a JSON formatted value quoted by quoted-string
 
 - The descriptor gets cached together with the resource R? Separately maintained?
   - -> only in response to OPTIONS?
+
+- Only root considering security concerns?
+  - https://github.com/whatwg/fetch/issues/210#issuecomment-211793513
 
 ### General Origin-Wide Policy
 
