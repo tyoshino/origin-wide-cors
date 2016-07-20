@@ -41,11 +41,12 @@ Starting with just summarizing ideas proposed at https://github.com/whatwg/fetch
   - JOSE
 - JSON, CBOR, ...
 
-## Plan
+## Plans
 
-- Start with just allowing for announcing that the origin understands CORS and therefore it's safe to omit preflight
+- Start with just allowing for announcing that the origin understands CORS and therefore it's safe to omit preflight. And then, extend it to enable announcing capability in more fine-grained form and detailed parameters
   - shouldn't be simply extended to HTTPS from HTTP
-- Extend it to enable announcing capability in more fine-grained form and detailed parameters
+  - --> Too dangerous? https://github.com/whatwg/fetch/issues/210#issuecomment-233588495
+- Have almost the same level of cumbersomeness as current preflight to prevent people from copy&pasting
 
 ## Strawman
 
