@@ -1,5 +1,9 @@
 # Origin-Wide CORS
 
+Editor: Takeshi Yoshino
+
+## Introduction
+
 Extra round trip caused by CORS preflight has been adding significant delay to XHR/Fetch with non-simple headers/method. This is preventing performance sensitive applications from adopting web platform.
 
 The Origin-Wide CORS mechanism improves this by allowing an origin server to announce CORS capability and parameters widely across resources.
@@ -40,7 +44,15 @@ Starting with just summarizing ideas proposed at https://github.com/whatwg/fetch
 ## Plan
 
 - Start with just allowing for announcing that the origin understands CORS and therefore it's safe to omit preflight
+  - shouldn't be simply extended to HTTPS from HTTP
 - Extend it to enable announcing capability in more fine-grained form and detailed parameters
+
+## Idea 1
+
+- On the initial cross-origin non-simple request to an origin X from origin Y
+
+- On the initial request to a 
+
 
 ## Alternatives
 
