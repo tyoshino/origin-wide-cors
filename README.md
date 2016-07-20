@@ -63,17 +63,21 @@ Starting with just summarizing ideas proposed at https://github.com/whatwg/fetch
 The `Origin-Wide-CORS` header has a JSON formatted value quoted by quoted-string if needed.
 
 ```
-[
-  {
-    "origin": "http://www.example.com",
-    "url": "/service",
-    "max-age": 31536000,
-    "credentials": false,
-    "method": "get",
-    "headernames": ["x-requested-with", "custom"]
-  },
-  ...
-]
+{
+  "cors": [
+    {
+      "url": "/service",
+      "origin": "http://www.example.com",
+      "max-age": 31536000,
+      "credentials": false,
+      "method": "get",
+      "headernames": ["x-requested-with", "custom"]
+    },
+    ...
+  ],
+  "csp": ...
+  "upgrade-insecure-requests"
+}
 ```
 
 - This parameter will be stored into the CORS preflight cache with the `origin-wide-cors` flag
@@ -88,6 +92,10 @@ The `Origin-Wide-CORS` header has a JSON formatted value quoted by quoted-string
 - The only allowed value for `credentials` is **false** for the initial version of the protocol
 - An Origin-Wide-CORS descriptor fetched over HTTP is not applicable to fetches over HTTPS
 - An Origin-Wide-CORS descriptor fetched over HTTPS is applicable to fetches over both HTTPS and HTTP
+
+### General Origin-Wide Policy
+
+This protocol can be generalized to allow for announcing various policies in addition to the CORS.
 
 ## Alternatives
 
