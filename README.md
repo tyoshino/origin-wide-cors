@@ -109,6 +109,7 @@ This protocol can be generalized to allow for announcing various policies in add
 ## Alternatives
 
 - Standardize how to embed non-simple headers in a URL
+  - See [this post](https://github.com/whatwg/fetch/issues/210#issue-129531743) by @wenbozhu
 - Foreign fetch ServiceWorker
 
 ## References
